@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shikha-Guru AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+        <p class="loader-text">শিক্ষা-গুরু প্রস্তুত হচ্ছে...</p>
+    </div>
+
+    <div id="container" style="display: none;">
+        
+        <div id="overlay" onclick="toggleSidebar(false)"></div> 
+        
+        <div id="sidebar">
+            <div class="sidebar-header">
+                <h3>Chat History 📜</h3>
+                <button id="close-sidebar" onclick="toggleSidebar(false)">×</button>
+            </div>
+            <ul id="history-list">
+                <li id="new-chat-btn" onclick="startNewSession()">+ New Chat</li> 
+            </ul>
+            <ul id="session-history"></ul>
+            <button class="clear-btn" onclick="clearHistory()">Clear All History</button>
+        </div>
+
+        <div id="chat-container">
+            <div id="chat-header">
+                <button id="menu-btn" onclick="toggleSidebar(true)">☰</button> 
+                <span class="header-title">Shikha-Guru (শিক্ষা গুরু)</span>
+            </div>
+            
+            <div id="chat-box"></div>
+
+            <div id="input-box">
+                <input type="text" id="userInput" placeholder="আপনার প্রশ্নটি এখানে লিখুন..." autocomplete="off">
+                <button id="send-btn" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
